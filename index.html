@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>手机通讯录</title>
+  <style>
+    *{margin:0;}
+    html{font-size:62.5%;font-family: "微软雅黑";}
+    html,body{height:100%;overflow:hidden;}
+    .user-list{position:relative;height:100%;overflow:auto;}
+    .user-list dd{padding:5px 1.5rem 5px 1rem;}
+    .user-list dt{font-size:1.6rem;background:#f9f9f9;padding:3px 10px;color:#666;}
+    .user-list dd a{display:block;font-size:1.4rem;color:#333;padding:10px 0;border-bottom:1px solid #f8f8f8;text-decoration:none;}
+    .list-bar{position:fixed;top:0;right:0;height:100%;width:2rem;-webkit-transform: translateZ(0);background:rgba(0,0,0,0.1);display:table;}
+    .bar-content{display:table-cell;vertical-align: middle;}
+    .list-bar span{display:table;height:3.6%;width:100%;font-size:0;}
+    .list-bar span:before{content:attr(tag);display:table-cell;vertical-align: middle;text-align:center;font-size:1rem;transform: scale(0.8);color:#666;}  .tag{width:8rem;height:8rem;border-radius:50%;background:rgba(0,0,0,0.3);position:fixed;top:50%;margin-top:-4rem;left:50%;margin-left:-4rem;display:none;}
+    .tag:before{content:attr(val);display:table-cell;text-align:center;vertical-align: middle;font-size:4rem;color:#fff;}
+  </style>
+</head>
+<body>
+  <div class="user-list" id="list">
+    <div class="tag"></div>
+    <div class="list-bar">
+      <div class="bar-content">
+        <span tag="#">#</span>
+        <span tag="A">a</span>
+        <span tag="B">b</span>
+        <span tag="C">c</span>
+        <span tag="D">d</span>
+        <span tag="E">e</span>
+        <span tag="F">f</span>
+        <span tag="G">g</span>
+        <span tag="H">h</span>
+        <span tag="I">i</span>
+        <span tag="J">j</span>
+        <span tag="K">k</span>
+        <span tag="L">l</span>
+        <span tag="M">m</span>
+        <span tag="N">n</span>
+        <span tag="O">o</span>
+        <span tag="P">p</span>
+        <span tag="Q">q</span>
+        <span tag="R">r</span>
+        <span tag="S">s</span>
+        <span tag="T">t</span>
+        <span tag="U">u</span>
+        <span tag="V">v</span>
+        <span tag="W">w</span>
+        <span tag="X">x</span>
+        <span tag="Y">y</span>
+        <span tag="Z">z</span>
+        <span tag="#">#</span>
+      </div>
+    </div>
+    <dl class="list-wrap">
+      <dt>#</dt>
+      <dd>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+      </dd>
+      <dt>B</dt>
+      <dd>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+      </dd>
+      <dt>C</dt>
+      <dd>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+      </dd>
+      <dt>E</dt>
+      <dd>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+      </dd>
+      <dt>F</dt>
+      <dd>
+        <a href="javascript:;javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+      </dd>
+      <dt>H</dt>
+      <dd>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张三</a>
+      </dd>
+      <dt>L</dt>
+      <dd>
+        <a href="javascript:;">刘备</a>
+        <a href="javascript:;">刘德华</a>
+        <a href="javascript:;">刘邦</a>
+        <a href="javascript:;">李艳君</a>
+        <a href="javascript:;">李梦</a>
+      </dd>
+      <dt>M</dt>
+      <dd>
+        <a href="javascript:;">孟姜女</a>
+        <a href="javascript:;">孟子</a>
+      </dd>
+      <dt>w</dt>
+      <dd>
+        <a href="javascript:;">王天</a>
+        <a href="javascript:;">王晶</a>
+        <a href="javascript:;">王老吉</a>
+        <a href="javascript:;">吴振</a>
+        <a href="javascript:;">吴孟达</a>
+      </dd>
+      <dt>X</dt>
+      <dd>
+        <a href="javascript:;">夏俊峰</a>
+        <a href="javascript:;">徐璐</a>
+        <a href="javascript:;">徐祖皓</a>
+        <a href="javascript:;">夏雨荷</a>
+        <a href="javascript:;">许坤</a>
+      </dd>
+      <dt>Y</dt>
+      <dd>
+        <a href="javascript:;">于陆</a>
+        <a href="javascript:;">于争光</a>
+        <a href="javascript:;">杨武</a>
+        <a href="javascript:;">杨翠</a>
+        <a href="javascript:;">杨艳</a>
+      </dd>
+      <dt>Z</dt>
+      <dd>
+        <a href="javascript:;">张三</a>
+        <a href="javascript:;">张艺谋</a>
+        <a href="javascript:;">张靓颖</a>
+        <a href="javascript:;">张三丰</a>
+        <a href="javascript:;">张一山</a>
+        <a href="javascript:;">张杰</a>
+        <a href="javascript:;">张磊</a>
+      </dd>
+    </dl>
+  </div>
+</body>
+<script type="text/javascript" src="zep.js"></script>
+<script type="text/javascript">
+var book=document.querySelector("#list");
+var bar=book.querySelector(".list-bar");
+var tag=book.querySelector(".tag");
+var title=book.getElementsByTagName("dt");
+var ele,pointX=null,arr=[];
+for(var i=0;i<title.length;i++){
+  arr.push({"tag":title[i].innerHTML,"move":title[i].offsetTop})
+}
+pointX=document.body.offsetWidth-bar.offsetWidth/2;
+bar.addEventListener("touchstart",function(e){
+  ele = document.elementFromPoint(pointX, e.touches[0].pageY);
+  move(ele);
+})
+bar.addEventListener("touchmove",function(e){
+  ele = document.elementFromPoint(pointX, e.touches[0].pageY);
+  move(ele);
+})
+bar.addEventListener("touchend",function(e){
+  tag.style.display="none";
+  bar.ontouchstart=null;
+  bar.ontouchmove=null;
+  bar.ontouchend=null;
+})
+function move(ele){
+  var text=ele.innerHTML.toUpperCase();
+  tag.setAttribute("val",ele.innerHTML.toUpperCase())
+  tag.style.display="table";
+  for(var i=0;i<arr.length;i++){
+    if(text==arr[i].tag){
+      book.scrollTop=arr[i].move;
+      console.log(arr[i].move+"px")
+    }
+  }
+}
+  /*book("list");
+  function book(id){
+    var bar=$("#"+id).find(".bar-content");
+    var length=bar.find("span").length;
+    var tag=null;
+    var top=null;
+    var book=$("#"+id);
+    var height=book.height()/length;
+    var map=[];
+    for(var i=0;i<length;i++){
+      map.push(height*i);
+    }
+    console.log(map)
+    bar.bind("touchstart",function(e){
+      var touch=e.touches[0];
+      top=touch.pageY;
+    })
+    bar.bind("touchmove",function(e){
+      var touch=e.touches[0];
+      tag=touch.target;
+      top=touch.pageY;
+      console.log(top)
+    })
+    bar.bind("touchend",function(){
+
+    })
+  }*/
+
+</script>
+</html>
